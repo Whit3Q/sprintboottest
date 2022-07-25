@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${news.title}">제목입니다</h1>
+    <p th:text="${news.content}">내용이 들어갈 부분입니다.</p>
+
+    <div>
+        <form action="/news/delete" method="post">
+            <input type="hidden" th:name="id" th:value="${news.id}"/>
+            <!--        <input style="display:none" id="id" th:value="${news.id}">-->
+            <button type="submit">삭제</button>
+        </form>
+
+        <form th:action="@{/news/modify/{id}(id = ${news.id})}" method="get">
+            <!--        <input style="display:none" id="id" th:value="${news.id}">-->
+            <button type="submit">수정</button>
+        </form>
+    </div>
+
+</body>
+</html>

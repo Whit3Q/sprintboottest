@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .layout {
+        width : 500px;
+        margin : 0 auto;
+        margin-top : 40px;
+    }
+
+</style>
+<body>
+    <div class="layout">
+        <table>
+            <thead>
+                <tr>
+                    <th>글번호</th>
+                    <th>제목</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="news : ${list}">
+                    <th>
+                        <a th:text="${news.id}" th:href="@{/news/view(id=${news.id})}">
+                            1
+                        </a>
+                    </th>
+                    <th>
+                        <a  th:text="${news.title}" th:href="@{/news/view(id=${news.id})}">
+                            제목입니다
+                        </a>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
