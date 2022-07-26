@@ -24,9 +24,9 @@ public class TextRank {
             sb.append(line);
         }
 
-        if(exitVal != 0) {
+        if (exitVal != 0) {
             // 비정상 종료
-            System.out.println("서브 프로세스가 비정상 종료되었다.");
+            System.out.println("서브 프로세스가 비정상 종료되었다." + arg2.substring(10));
         }
         return sb.toString();
     }

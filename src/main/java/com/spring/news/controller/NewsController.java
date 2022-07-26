@@ -55,7 +55,7 @@ public class NewsController {
     }
 
     @GetMapping("/news/view")
-    public String newsView(Model model,Integer id) {
+    public String newsView(Model model, Integer id) {
 
         model.addAttribute("news", newsService.newsView(id));
 
@@ -101,8 +101,8 @@ public class NewsController {
     public String newsCrawling(Model model, String url) throws IOException, InterruptedException {
 
         ArrayList<NewsC> tmp = newsService.newsCrawling(url);
-        for(NewsC newsC : tmp) {
-            newsService.crawlingWrite(new NewsC(newsC,TextRank.start(newsC.getContent())));
+        for (NewsC newsC : tmp) {
+            newsService.crawlingWrite(new NewsC(newsC, TextRank.start(newsC.getContent())));
         }
 
         return "redirect:/newsC/list";

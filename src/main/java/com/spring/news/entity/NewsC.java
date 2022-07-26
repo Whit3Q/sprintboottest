@@ -7,10 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name="news")
+@Entity(name = "news")
 @Data
 public class NewsC {
-
 
 
     @Id

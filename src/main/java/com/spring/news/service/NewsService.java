@@ -59,7 +59,7 @@ public class NewsService {
     //글 작성
     public void crawlingWrite(NewsC newsC) {
         boolean check = crawlingRepository.existsByTitle(newsC.getTitle());
-        if(!check) {
+        if (!check) {
             crawlingRepository.save(newsC);
         }
     }
